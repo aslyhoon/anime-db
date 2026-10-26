@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANIME/DB — Browse</title>
+  <meta name="description" content="A small anime database. Browse, search, and open any title for ratings, characters, and a spoiler-free story sneak peek.">
+  <!-- Two fonts only: Bebas Neue for display, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="browse">
+
+  <!-- Slim top bar: wordmark left, search right -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="wordmark" href="index.html" aria-label="ANIME/DB home">ANIME<em>/</em>DB</a>
+      <div class="topbar-search">
+        <label for="search">Search</label>
+        <input type="search" id="search" placeholder="Title, genre, studio…" autocomplete="off">
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="app-error"></div>
+
+    <!-- Featured hero: random title on load, "Next featured" cycles -->
+    <section class="hero" aria-label="Featured anime">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Featured title</p>
+          <h1 class="hero-title" id="hero-title">Loading…</h1>
+          <p class="hero-tagline" id="hero-tagline"></p>
+          <p class="hero-meta" id="hero-meta"></p>
+          <div class="hero-actions">
+            <a class="btn-view" id="hero-view" href="#">View title</a>
+            <button type="button" class="btn-text" id="hero-next">Next featured</button>
+          </div>
+        </div>
+        <figure class="hero-art">
+          <div id="hero-art"></div>
+          <figcaption>Key art</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Text-style filters (no dropdowns). Chips are built from anime.json -->
+    <section class="filters" aria-label="Filters">
+      <div class="filter-row">
+        <span class="filter-label">Genre</span>
+        <span id="genre-filters"></span>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Year</span>
+        <span id="year-filters"></span>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label">Rating</span>
+        <span id="rating-filters"></span>
+      </div>
+    </section>
+
+    <p class="result-line" id="result-line" aria-live="polite"></p>
+
+    <!-- Poster grid: title + rating only. Cards are rendered from anime.json -->
+    <section class="grid" id="grid" aria-label="Anime list"></section>
+
+    <noscript>
+      <p>This site needs JavaScript to render the database from anime.json.</p>
+    </noscript>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>ANIME/DB — a demo database. Ratings shown are sample data. Posters link to their MyAnimeList CDN originals.</p>
+    </div>
+  </footer>
+</body>
+</html>
