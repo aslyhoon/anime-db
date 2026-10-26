@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANIME/DB — Title</title>
+  <meta name="description" content="Ratings, characters, writer, and a spoiler-free story sneak peek.">
+  <!-- Two fonts only: Bebas Neue for display, Inter for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="detail">
+
+  <!-- Slim top bar: wordmark left, back link right -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="wordmark" href="index.html" aria-label="ANIME/DB home">ANIME<em>/</em>DB</a>
+      <a class="back-link" href="index.html">← All anime</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap"><div id="app-error"></div></div>
+    <!-- Everything below is rendered from anime.json by script.js,
+         using the ?id= query parameter. No per-anime pages needed. -->
+    <div id="detail-root"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>ANIME/DB — a demo database. Ratings shown are sample data. Posters link to their MyAnimeList CDN originals.</p>
+    </div>
+  </footer>
+</body>
+</html>
